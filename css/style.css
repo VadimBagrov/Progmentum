@@ -211,12 +211,15 @@ canvas {
   font-family: "Arial-MT";
   font-size: 100px;
   letter-spacing: -4px;
+  color: #a8a8a8;
 }
 
 .date {
   min-height: 28px;
   font-size: 24px;
+  font-family: "Arial-MT";
   margin-bottom: 20px;
+  color: #a8a8a8;
 }
 
 .greeting-container {
