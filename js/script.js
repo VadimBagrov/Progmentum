@@ -18,6 +18,7 @@ const draw = function () {
 };
 setInterval(draw , 43);
 
+
 // Date and time
 
 setInterval(function() {
@@ -36,3 +37,32 @@ setInterval(function() {
 
     dateNow.textContent = currentDate;
 }, 1000) //Дата и день недели
+
+
+// Greetings
+function getTimeOfDay() {
+    date = new Date();
+    const hours = date.getHours();
+    const greeting = document.querySelector('.greeting')
+
+    let timeOfDay = 6 < hours > 18 ? 'Day' : 'Night';
+
+    const greetingText = `Good ${timeOfDay} ,`
+    greeting.textContent = greetingText
+}
+
+setInterval(getTimeOfDay, 1000)
+
+// Save name
+
+function setLocalStorage() {
+  localStorage.setItem('name', name.value);
+}
+window.addEventListener('beforeunload', setLocalStorage);
+
+function getLocalStorage() {
+  if(localStorage.getItem('name')) {
+    name.value = localStorage.getItem('name');
+  }
+}
+window.addEventListener('load', getLocalStorage);

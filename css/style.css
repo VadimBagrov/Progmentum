@@ -236,6 +236,7 @@ canvas {
   flex: 1;
   padding: 10px;
   text-align: right;
+  color: #a8a8a8;
 }
 
 .name {
@@ -247,11 +248,11 @@ canvas {
   color: #fff;
   background-color: transparent;
   border: 0;
-  outline: 0;
+  color: #a8a8a8;
 }
 
 .name::placeholder {
-  color: #fff;
+  color: #888888;
   opacity: 0.6;
 }
 
