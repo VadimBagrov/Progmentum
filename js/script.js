@@ -59,10 +59,35 @@ function setLocalStorage() {
   localStorage.setItem('name', name.value);
 }
 window.addEventListener('beforeunload', setLocalStorage);
+//Перед перезагрузкой или закрытием страницы (событие beforeunload) данные сохраняются
 
 function getLocalStorage() {
   if(localStorage.getItem('name')) {
     name.value = localStorage.getItem('name');
   }
 }
+//Перед загрузкой страницы (событие load) данные восстанавливаются и отображаются
+
 window.addEventListener('load', getLocalStorage);
+//localStorage.setItem - метод сохраняющий данные в localStorage. Два параметра метода: имя значения, которое сохраняется и само значение, которое сохраняется
+//localStorage.getItem - метод получающий данные из localStorage. Параметр метода - имя, под которым сохраняется значение.
+
+// Weather 
+
+const weatherIcon = document.querySelector('.weather-icon');
+const temperature = document.querySelector('.temperature');
+const weatherDescription = document.querySelector('.weather-description');
+// Находим элементы показа погоды на странице из html
+
+async function getWeather() {
+  const url = `https://api.openweathermap.org/data/2.5/weather?q=Москва&lang=en&appid=df940439995b4c2ae3d3172ccc48f414&units=metric`;
+  const res = await fetch(url);
+  const data = await res.json();
+  
+  //Вывод погоды на страницы
+  weatherIcon.className = 'weather-icon owf color-w';
+  weatherIcon.classList.add(`owf-${data.weather[0].id}`);
+  temperature.textContent = `${data.main.temp}°C`;
+  weatherDescription.textContent = data.weather[0].description;
+}
+getWeather() // Функция получения погоды

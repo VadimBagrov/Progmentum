@@ -15,16 +15,6 @@ body {
   padding: 0;
   background: #333;
   overflow: hidden;
-  /*  */
-  /* min-width: 480px;
-  min-height: 100vh;
-  font-family: "Arial", sans-serif;
-  font-size: 16px; */
-  /* color: #fff; */
-  /* text-align: center; */
-  /* background: url("../assets/img/bg.jpg") center/cover, rgba(0, 0, 0, 0.5); */
-  /* background-blend-mode: multiply;
-  transition: background-image 1s ease-in-out; */
 }
 
 canvas {
@@ -299,4 +289,9 @@ canvas {
     font-size: 32px;
     padding: 5px;
   }
+}
+
+.color-w {
+  color: #fff;
+  z-index: 1;
 }
