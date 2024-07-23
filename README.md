@@ -1,7 +1,4 @@
 # Progmentum
-### Soon  update
-
-
 ---
 ### Launch project :
 - 1 Method : soon 
